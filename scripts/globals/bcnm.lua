@@ -57,7 +57,7 @@ bcnmid_param_map = {6,{640,0},
 					32,{992,0,993,1},
 					35,{1024,0},
                     36,{1056,0},
-					139,{0,0,3,3,4,4,5,5,6,6,7,7,10,10,11,11,12,12,15,15,17,17},
+					139,{0,0,3,3,4,4,5,5,6,6,7,7,10,10,11,11,12,12,15,15,17,17,20,20},
 					140,{32,0,33,1,34,2,35,3,36,4},
 					144,{65,1,73,9,64,0,67,3,68,4,70,6,71,7,72,8,81,17,76,12,82,18,79,15},
 					146,{99,3,96,0,101,5,102,6,103,7,107,11,105,9},
@@ -457,15 +457,16 @@ function checkNonTradeBCNM(player,npc)
 	        mask = GetBattleBitmask(1056,Zone,1);
 	        player:setVar("trade_bcnmid",1056);
 	    end
-
 	elseif(Zone == 139) then -- Horlais Peak
-		if((player:getCurrentMission(BASTOK) == THE_EMISSARY_SANDORIA2 or
-			player:getCurrentMission(WINDURST) == THE_THREE_KINGDOMS_SANDORIA2) and player:getVar("MissionStatus") == 9) then -- Mission 2-3
+		if((player:getCurrentMission(BASTOK) == THE_EMISSARY_SANDORIA2 or player:getCurrentMission(WINDURST) == THE_THREE_KINGDOMS_SANDORIA2) and player:getVar("MissionStatus") == 9) then -- Mission 2-3
 			mask = GetBattleBitmask(0,Zone,1);
 			player:setVar("trade_bcnmid",0);
 		elseif(player:getCurrentMission(SANDORIA) == THE_SECRET_WEAPON and player:getVar("SecretWeaponStatus") == 2) then
-			mask = GetBattleBitmask(3,Zone,1)
+			mask = GetBattleBitmask(3,Zone,1);
 			player:setVar("trade_bcnmid",3);
+		elseif(player:getQuestStatus(JEUNO,BEYOND_INFINITY) == QUEST_ACCEPTED and player:hasKeyItem(SOUL_GEM_CLASP) == true) then -- Beyond Infinity Battle
+			mask = GetBattleBitmask(20,Zone,1);
+			player:setVar("trade_bcnmid",20);
 		end
 	elseif(Zone == 140) then -- Ghelsba Outpost
 		local MissionStatus = player:getVar("MissionStatus");
