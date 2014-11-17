@@ -30,6 +30,9 @@ require("scripts/zones/Horlais_Peak/TextIDs");
 	--- 15: Double Dragonian
 	--- 16: Today's Horoscope
 	--- 17: Contaminated Colosseum
+	--- 18:
+	--- 19:
+	--- 20: Beyond Infinity
 
 -----------------------------------
 -- onTrade Action
