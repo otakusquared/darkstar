@@ -116,3 +116,5 @@ UpgradeLog*.XML
 *.exe
 *.out
 *.app
+/test.dat
+/test2.dat
