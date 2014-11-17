@@ -49,11 +49,30 @@ function onTrigger(player,npc)
     local StonesStock = player:getTstone();
     local StonesKI = getTravStonesTotal(player);
     local MaxKI = getMaxTravStones(player);
+	local StonesUsed = player:getVar("ABY_STONES_USED");
     local isCap = 0;
-    if (StonesKI >= MaxKI) then
+    local currentday = tonumber((os.date("%Y")*365*24)+((os.date("%j"))*24)+(os.date("%H")));
+	local abystonetimer = player:getVar("ABY_STONE_TIMER");
+	local stonediff = math.floor((currentday - abystonetimer)/20);
+	local final = stonediff - StonesStock - StonesUsed;
+	
+	printf("TESTING: %u",currentday);
+	printf("TESTING3: %u",abystonetimer);
+	printf("TESTING2: %u",stonediff);
+	
+	printf("StonesKI: %u",StonesKI);
+	printf("MaxKI: %u",MaxKI);
+	printf("StonesStock: %u",StonesStock);
+	printf("StonesUsed: %u",StonesUsed);
+	
+	printf("TEST STONES: %u",final);
+	
+	--player:addTstone(final);
+	
+	if (StonesKI >= MaxKI) then
         isCap = 1;
     end
-
+	
     if (player:getQuestStatus(ABYSSEA, A_JOURNEY_BEGINS) == QUEST_ACCEPTED) then
         player:startEvent(0x0145);
     elseif (player:getQuestStatus(ABYSSEA, THE_TRUTH_BECKONS) == QUEST_ACCEPTED and player:getVar("1stTimeAyssea") == 1) then
