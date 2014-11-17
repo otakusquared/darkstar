@@ -16,8 +16,8 @@ require("scripts/globals/settings");
 require("scripts/globals/weaponskills");	
 -----------------------------------	
 	
-function OnUseWeaponSkill(player, target, wsID)	
-	
+function OnUseWeaponSkill(player, target, wsID)
+
 	local params = {};
 	params.numHits = 1;
 	params.ftp100 = 1; params.ftp200 = 1.5; params.ftp300 = 2;
@@ -27,7 +27,22 @@ function OnUseWeaponSkill(player, target, wsID)
 	params.acc100 = 0.0; params.acc200= 0.0; params.acc300= 0.0;
 	params.atkmulti = 1;
 	local damage, tpHits, extraHits = doPhysicalWeaponskill(player, target, params);
+
+	local zone = player:getZone()
+	local mobID = target:getID();
+	local test = target:getID() + 7;
+	local redTrig = GetServerVariable(test);
+	if zone == 15 or zone == 45 or zone == 132 or zone == 215 or zone == 216 or zone == 217 or zone == 218 or zone == 253 or zone == 254 or zone == 255 then
+		if GetServerVariable(mobID) == 7 then
+			target:weaknessTrigger(2);
+			target:addStatusEffect(EFFECT_TERROR,1,0,30);
+			SetServerVariable(test,redTrig+1);
+			return tpHits, extraHits, criticalHit, damage;
+		else
+			return tpHits, extraHits, criticalHit, damage;
+		end;
+	else
+		return tpHits, extraHits, criticalHit, damage;
+	end;
 	
-	return tpHits, extraHits, damage;
-	
-end	
+end;
