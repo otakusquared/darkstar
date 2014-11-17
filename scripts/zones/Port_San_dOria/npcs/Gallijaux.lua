@@ -26,7 +26,7 @@ function onTrade(player,npc,trade)
 	ForestCarp = trade:getItemQty(4289)
 	fishCountVar = player:getVar("theCompetitionFishCountVar");
 	if(MoatCarp + ForestCarp > 0 and MoatCarp + ForestCarp == count) then
-		if(player:getQuestStatus(SANDORIA,THE_RIVALRY) == QUEST_ACCEPTED and fishCountVar >= 10000) then -- ultimate reward
+		if(player:getQuestStatus(SANDORIA,THE_RIVALRY) == QUEST_ACCEPTED and fishCountVar + count >= 10000) then -- ultimate reward
 			player:tradeComplete();
 			player:addFame(SANDORIA,SAN_FAME*30);
 			player:addGil((GIL_RATE*10*MoatCarp) + (GIL_RATE*15*ForestCarp));
@@ -78,7 +78,6 @@ function onEventFinish(player,csid,option)
 		if (player:getFreeSlotsCount() == 0) then 
 			player:messageSpecial(ITEM_CANNOT_BE_OBTAINED,17386);
 		else
-			player:tradeComplete();
 			player:addItem(17386);
 			player:messageSpecial(ITEM_OBTAINED, 17386);
 			player:addTitle(CARP_DIEM);
