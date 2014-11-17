@@ -25,9 +25,9 @@ end;
 -----------------------------------
 
 function onTrigger(player,npc)
-    if (ENABLE_ABYSSEA == 1 and player:getMainLvl() >= 30) then
+    if (ENABLE_ABYSEA == 1 and player:getMainLvl() >= 30) then
         local HasStone = getTravStonesTotal(player);
-        if (HasStone >= 1 and player:getQuestStatus(ABYSSEA, DAWN_OF_DEATH) == QUEST_ACCEPTED
+		if (HasStone >= 1 and player:getQuestStatus(ABYSSEA, DAWN_OF_DEATH) == QUEST_ACCEPTED
         and player:getQuestStatus(ABYSSEA, TO_PASTE_A_PEISTE) == QUEST_AVAILABLE) then
             player:startEvent(0);
         else
