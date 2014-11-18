@@ -17,6 +17,7 @@ CONQUEST = 10511; -- You've earned conquest points!
 SOVEREIGN_WITHOUT_AN_APPOINTMENT = 10128; -- Nobody sees the sovereign without an appointment!
             ITEM_DELIVERY_DIALOG = 10219; -- Now offering quick and easy delivery of packages to homes everywhere!
                      MAAT_DIALOG = 10317; -- Heh. You've got no business talking to me. Why, you're just a pup.
+		     NOMAD_MOOGLE_DIALOG = 12201; -- Dialog if LB8 quest requirements not met.
 
 -- Mission Dialog
 WINDURST_EMBASSY = 10055; -- It reads
