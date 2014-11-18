@@ -92,7 +92,7 @@ function SetFieldManual()
     {
         17187561,17187562,17191530,17191531, -- West Ronfaure (2), East Ronfaure (2)
         17195672,17195673,17199746,17199747, -- La Theine (2), Valkurm (2)
-        17199748,17203878,17203879,17207861, -- Valkurm (1), Jugner (2), Batallia (1)
+        17199748,17203878,17203879,17207864, -- Valkurm (1), Jugner (2), Batallia (1)
         17207865,17212104,17212105,17212106, -- Batallia (1), North Gustaberg (3)
         17216195,17216196,17220164,17220165, -- South Gustaberg (2), Konschtat (2)
         17224346,17224347,17228374,17228375, -- Pashhow (2), Rolanberry (2)
@@ -265,20 +265,20 @@ function SetTreasureSpawns()
        16814556, -- Pso'Xja
        16822526, -- Oldton Movalpolos
        16892178, -- Sacrarium
-       17355007, -- Fort Ghelsba
-       17359047, -- Yughott Grotto
+       17355008, -- Fort Ghelsba
+       17359048, -- Yughott Grotto
        17363365, -- Palborough Mines
-       17371603, -- Giddeus
+       17371604, -- Giddeus
        17379837, -- Beadeaux
        17388022, -- Davoi
        17396205, -- Castle Oztroja
-       17420671, -- Middle Delkfutt's Tower
-       17424558, -- Upper Delkfutt's Tower
+       17420672, -- Middle Delkfutt's Tower
+       17424559, -- Upper Delkfutt's Tower
        17436992, -- Castle Zvahl Baileys
        17441083, -- Castle Zvahl Keep
        17498611, -- Sea Serpent Grotto
        17555949, -- King Ranperre's Tomb
-       17559919, -- Dangruf Wadi
+       17559920, -- Dangruf Wadi
        17563909, -- Inner Horutoto Ruins
        17568187, -- Ordelle's Caves
        17572285, -- Outer Horutoto Ruins
@@ -287,7 +287,7 @@ function SetTreasureSpawns()
        17584470, -- Crawler's Nest
        17588768, -- Maze of Shakhrami
        17596804, -- Garlaige Citadel
-       17613221, -- Fei'Yin
+       17613222, -- Fei'Yin
        17649892  -- Labyrinth of Onzozo
    }
 
