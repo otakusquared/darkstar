@@ -954,7 +954,7 @@ switch (region): caseof {
   ---------------------------------
 	--print("KUZOTZ");
 
-	local Eaulevisat = 17244622;
+	local Eaulevisat = 17244623;
 
 	npc  = {
 	--
