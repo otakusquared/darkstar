@@ -515,6 +515,7 @@ INSERT INTO `mob_family_system` VALUES (481,'Zeid',13,'Humanoid',0,40,120,100,3,
 INSERT INTO `mob_family_system` VALUES (482,'Volker',13,'Humanoid',0,40,90,110,3,3,2,3,2,2,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,0);
 INSERT INTO `mob_family_system` VALUES (483,'Trion',13,'Humanoid',0,40,100,90,2,5,3,6,6,2,4,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,0);
 INSERT INTO `mob_family_system` VALUES (484,'Lilisette',13,'Humanoid',0,40,90,110,3,3,2,3,2,2,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,0);
+INSERT INTO `mob_family_system` VALUES (485,'Atori-Tutori',13,'Humanoid',0,40,100,100,3,3,3,3,3,3,3,3,3,3,3,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,8);
 
 
 /*!40000 ALTER TABLE `mob_family_system` ENABLE KEYS */;
