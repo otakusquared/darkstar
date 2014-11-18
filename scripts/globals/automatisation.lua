@@ -23,7 +23,7 @@ function OnGameDayAutomatisation()
 	-- Labyrinth of sacrarium
 	local day = VanadielDayElement() ;
 	local tbl;
-	local SacrariumWallOffset = 16892108;
+	local SacrariumWallOffset = 16892109;
 	
 	if(day == 3 or day == 7) then
 		tbl = {9,9,8,8,9,9,8,9,8,8,9,8,8,8,9,8,9,8};

@@ -92,18 +92,18 @@ function SetFieldManual()
     {
         17187561,17187562,17191530,17191531, -- West Ronfaure (2), East Ronfaure (2)
         17195672,17195673,17199746,17199747, -- La Theine (2), Valkurm (2)
-        17199748,17203878,17203879,17207860, -- Valkurm (1), Jugner (2), Batallia (1)
-        17207861,17212104,17212105,17212106, -- Batallia (1), North Gustaberg (3)
-        17216195,17216196,17220160,17220161, -- South Gustaberg (2), Konschtat (2)
-        17224346,17224347,17228370,17228371, -- Pashhow (2), Rolanberry (2)
+        17199748,17203878,17203879,17207864, -- Valkurm (1), Jugner (2), Batallia (1)
+        17207865,17212104,17212105,17212106, -- Batallia (1), North Gustaberg (3)
+        17216195,17216196,17220164,17220165, -- South Gustaberg (2), Konschtat (2)
+        17224346,17224347,17228374,17228375, -- Pashhow (2), Rolanberry (2)
         17232274,17232275,17232276,17232277, -- Beaucedine (4)
         17236341,17236342,17240509,17240510, -- Xarcabard (2), Cape Teriggan (2)
         17244648,17244649,17244650,17248864, -- Eastern Altepa (3), West Sarutabaruta (1)
         17248865,17248866,17253059,17253060, -- West Sarutabaruta (2), East Sarutabaruta (2)
         17253061,17257069,17257070,17257071, -- East Sarutabaruta (1), Tahrongi (3)
         17261194,17261195,17265286,17265287, -- Buburimu (2), Meriphataud Mountains (2)
-        17265288,17269255,17269256,17273412, -- Meriphataud Mountains (1), Sauromugue (2), Zi'Tah (1)
-        17273413,17277205,17277206,17281641, -- Zi'Tah (1), Ro'Maeve (2), Yuhtunga Jungle (1)
+        17265290,17269255,17269256,17273413, -- Meriphataud Mountains (1), Sauromugue (2), Zi'Tah (1)
+        17273414,17277205,17277206,17281641, -- Zi'Tah (1), Ro'Maeve (2), Yuhtunga Jungle (1)
         17281642,17281643,17281644,17285693, -- Yuhtunga Jungle (3), Yhoator Jungle (1)
         17285694,17285695,17289790,17289791, -- Yhoator Jungle (2), Western Altepa (2)
         17289792,17293770,17293771,17297486, -- Western Altepa (1), Qufim (2), Behemoth's Dominion (1)
@@ -265,20 +265,20 @@ function SetTreasureSpawns()
        16814556, -- Pso'Xja
        16822526, -- Oldton Movalpolos
        16892178, -- Sacrarium
-       17355007, -- Fort Ghelsba
-       17359047, -- Yughott Grotto
+       17355008, -- Fort Ghelsba
+       17359048, -- Yughott Grotto
        17363365, -- Palborough Mines
-       17371603, -- Giddeus
+       17371604, -- Giddeus
        17379837, -- Beadeaux
        17388022, -- Davoi
        17396205, -- Castle Oztroja
-       17420671, -- Middle Delkfutt's Tower
-       17424558, -- Upper Delkfutt's Tower
+       17420672, -- Middle Delkfutt's Tower
+       17424559, -- Upper Delkfutt's Tower
        17436992, -- Castle Zvahl Baileys
        17441083, -- Castle Zvahl Keep
        17498611, -- Sea Serpent Grotto
        17555949, -- King Ranperre's Tomb
-       17559919, -- Dangruf Wadi
+       17559920, -- Dangruf Wadi
        17563909, -- Inner Horutoto Ruins
        17568187, -- Ordelle's Caves
        17572285, -- Outer Horutoto Ruins
@@ -287,7 +287,7 @@ function SetTreasureSpawns()
        17584470, -- Crawler's Nest
        17588768, -- Maze of Shakhrami
        17596804, -- Garlaige Citadel
-       17613221, -- Fei'Yin
+       17613222, -- Fei'Yin
        17649892  -- Labyrinth of Onzozo
    }
 
