@@ -54,7 +54,7 @@ function onTrigger(player,npc)
     local currentday = tonumber((os.date("%Y")*365*24)+((os.date("%j"))*24)+(os.date("%H")));
 	local abystonetimer = player:getVar("ABY_STONE_TIMER");
 	local stonediff = math.floor((currentday - abystonetimer)/20);
-	local final = stonediff - StonesStock - StonesUsed;
+	local final = stonediff - StonesStock - StonesUsed - StonesKI;
 	
 	printf("TESTING: %u",currentday);
 	printf("TESTING3: %u",abystonetimer);
@@ -65,9 +65,9 @@ function onTrigger(player,npc)
 	printf("StonesStock: %u",StonesStock);
 	printf("StonesUsed: %u",StonesUsed);
 	
-	printf("TEST STONES: %u",final);
+	printf("TEST STONES: %d",final);
 	
-	--player:addTstone(final);
+	player:addTstone(final);
 	
 	if (StonesKI >= MaxKI) then
         isCap = 1;
@@ -80,6 +80,7 @@ function onTrigger(player,npc)
     elseif (player:getQuestStatus(ABYSSEA, THE_TRUTH_BECKONS) ~= QUEST_COMPLETED) then
         player:startEvent(0x0146); -- Pre "The Truth Beckons" Menu
     elseif (player:getQuestStatus(ABYSSEA, DAWN_OF_DEATH) == QUEST_ACCEPTED) then
+		local StonesStock = player:getTstone();
         player:startEvent(0x0148,0,StonesStock,StonesKI,isCap,1,1,1,3); -- Post "The Truth Beckons" Menu
     -- elseif
         -- player:startEvent(0x014C);

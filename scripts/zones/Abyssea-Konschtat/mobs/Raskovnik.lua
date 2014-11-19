@@ -3,8 +3,12 @@
 -- NPC:  Raskovnik
 -----------------------------------
 
-require("scripts/globals/keyitems");
+-----------------------------------
+package.loaded["scripts/zones/Abyssea-Konschtat/TextIDs"] = nil;
+-----------------------------------
+
 require("scripts/zones/Abyssea-Konschtat/TextIDs");
+require("scripts/globals/keyitems");
 require("scripts/globals/status");	
 require("scripts/globals/settings");	
 require("scripts/globals/weaponskills");
@@ -21,11 +25,22 @@ end;
 -----------------------------------
 
 function onMobEngaged(mob,target)
---	local dayElement = VanadielDayElement();
---	printf("DayElement: %u",dayElement);
---	local redTrigger = math.random(1,13);
---	target:setVar("redTrigger",redTrigger);
---	printf("redTrigger: %u",redTrigger);
+	local yellowTrigger = 0
+	local dayElement = (VanadielDayElement());
+	if dayElement == 0 then
+		yellowTrigger = (select((math.random(1,3)),0,1,7));
+	elseif dayElement == 7 then
+		yellowTrigger = (select((math.random(1,3)),0,6,7));
+	else
+		yellowTrigger = (dayElement+(math.random(-1,1)));
+	end;
+	printf("yellowTrigger: %u",yellowTrigger);
+	mob:setLocalVar("yellowSpell",(math.random(1,7)));
+	printf("yellowSpell: %u",mob:getLocalVar("yellowSpell"));
+	local redTrigger = math.random(1,13);
+	printf("redTrigger: %u",redTrigger);
+	mob:setLocalVar("redTrigger",redTrigger);
+	mob:setLocalVar("yellowTrigger",yellowTrigger);
 end;
 
 -----------------------------------
@@ -34,47 +49,44 @@ end;
 
 function onMobFight(mob,target)
 
-local battletime = mob:getBattleTime();
-if battletime <= 1 then
-	local dayElement = VanadielDayElement();
-	printf("DayElement: %u",dayElement);
-	local TEST = mob:getID();
-	printf("TEST: %u",TEST);
-	local redTrigger = math.random(1,13);
-	printf("redTrigger: %u",redTrigger);
-	SetServerVariable(TEST,redTrigger);
-end
-	
+--local battletime = mob:getBattleTime();
+--if battletime <= 1 then
+--	local dayElement = VanadielDayElement();
+--	printf("DayElement: %u",dayElement);
+--	local TEST = mob:getID();
+--	printf("TEST: %u",TEST);
+--	local redTrigger = math.random(1,13);
+--	printf("redTrigger: %u",redTrigger);
+--	mob:setLocalVar("redTrigger",redTrigger);
+--end;
 end;
 
 -----------------------------------
 -- onMobDeath
 -----------------------------------
 
-function onMobDeath(mob, killer)
-	local TEST = mob:getID();
-	SetServerVariable(TEST,0);
-	local redtrigdrops = GetServerVariable(TEST+7);
+function onMobDeath(mob,killer)
+	local redtrigdrops = mob:getLocalVar("redWeakness");
 	local randomnumber = (math.random(0,100));
 	if (randomnumber >= 50) and (killer:hasKeyItem(FETID_RAFFLESIA_STALK) == false) then
 		killer:addKeyItem(FETID_RAFFLESIA_STALK);
 		killer:messageSpecial(KEYITEM_OBTAINED,FETID_RAFFLESIA_STALK);
 	end
 	if (redtrigdrops >= 1) and (killer:hasKeyItem(ATMA_OF_THRASHING_TENDRILS) == false) then
-		if redtrigdrops == 1 then
+		if (redtrigdrops == 1) then
 			killer:addKeyItem(ATMA_OF_THRASHING_TENDRILS);
 			killer:messageSpecial(KEYITEM_OBTAINED,ATMA_OF_THRASHING_TENDRILS);
-		elseif redtrigdrops == 2 then
+		elseif (redtrigdrops == 2) then
 			if (randomnumber >= 25) then
 				killer:addKeyItem(ATMA_OF_THRASHING_TENDRILS);
 				killer:messageSpecial(KEYITEM_OBTAINED,ATMA_OF_THRASHING_TENDRILS);
 			end;
-		elseif redtrigdrops == 3 then
+		elseif (redtrigdrops == 3) then
 			if (randomnumber >= 50) then
 				killer:addKeyItem(ATMA_OF_THRASHING_TENDRILS);
 				killer:messageSpecial(KEYITEM_OBTAINED,ATMA_OF_THRASHING_TENDRILS);
 			end;
-		elseif redtrigdrops == 4 then
+		elseif (redtrigdrops == 4) then
 			if (randomnumber >= 75) then
 				killer:addKeyItem(ATMA_OF_THRASHING_TENDRILS);
 				killer:messageSpecial(KEYITEM_OBTAINED,ATMA_OF_THRASHING_TENDRILS);
@@ -86,5 +98,4 @@ function onMobDeath(mob, killer)
 			end;
 		end;
 	end;
-	SetServerVariable(TEST+7,0);
 end;

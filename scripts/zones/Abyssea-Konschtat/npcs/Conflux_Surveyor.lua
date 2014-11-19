@@ -55,6 +55,7 @@ function onEventFinish(player,csid,option)
     local SOJOURN = getAbyssiteTotal(player,"SOJOURN");
     local duration = 0;
     local prevtime = player:getVar("Abyssea_Time"); -- Gets reduced by Visitants "on tic".
+	local stonesused = player:getVar("ABY_STONES_USED");
 
     if (prevtime > 7200) then
         prevtime = 7200;
@@ -73,6 +74,7 @@ function onEventFinish(player,csid,option)
             duration = ((duration + 1800) * VISITANT_BONUS);
             player:addStatusEffect(EFFECT_VISITANT,0,3,duration,0,0);
             player:setVar("Abyssea_Time",duration);
+			player:setVar("ABY_STONES_USED",stonesused+1);
             spendTravStones(player,1);
         elseif (option == 65539) then -- Use 1 stone
             player:PrintToPlayer( "Not implemented yet, sorry!" );
@@ -81,6 +83,7 @@ function onEventFinish(player,csid,option)
             duration = ((duration + 3600) * VISITANT_BONUS);
             player:addStatusEffect(EFFECT_VISITANT,0,3,duration,0,0);
             player:setVar("Abyssea_Time",duration);
+			player:setVar("ABY_STONES_USED",stonesused+2);
             spendTravStones(player,2);
         elseif (option == 131075) then -- Use 2 stone
             player:PrintToPlayer( "Not implemented yet, sorry!" );
@@ -89,6 +92,7 @@ function onEventFinish(player,csid,option)
             duration = ((duration + 5400) * VISITANT_BONUS);
             player:addStatusEffect(EFFECT_VISITANT,0,3,duration,0,0);
             player:setVar("Abyssea_Time",duration);
+			player:setVar("ABY_STONES_USED",stonesused+3);
             spendTravStones(player,3);
         elseif (option == 196611) then -- Use 3 stone
             player:PrintToPlayer( "Not implemented yet, sorry!" );
@@ -97,6 +101,7 @@ function onEventFinish(player,csid,option)
             duration = ((duration + 7200) * VISITANT_BONUS);
             player:addStatusEffect(EFFECT_VISITANT,0,3,duration,0,0);
             player:setVar("Abyssea_Time",duration);
+			player:setVar("ABY_STONES_USED",stonesused+4);
             spendTravStones(player,4);
         end
     end
