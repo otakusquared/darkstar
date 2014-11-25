@@ -30,8 +30,9 @@ ENABLE_SOA    = 1;
 -- CHARACTER CONFIG
 INITIAL_LEVEL_CAP = 50; --The initial level cap for new players.  There seems to be a hardcap of 255.
 MAX_LEVEL = 99; -- Level max of the server, works by disabling Maat quests.
-START_GIL = 50000000; --Amount of gil given to newly created characters.
-START_INVENTORY = 80; --Starting inventory and satchel size.  Ignores values < 30.  Do not set above 80!
+NORMAL_MOB_MAX_LEVEL_RANGE_MIN = 81; -- Lower Bound of Max Level Range for Normal Mobs (0 = Uncapped)
+NORMAL_MOB_MAX_LEVEL_RANGE_MAX = 84; -- Upper Bound of Max Level Range for Normal Mobs (0 = Uncapped)
+START_GIL = 50000000; --Amount of gil given to newly created characters.START_INVENTORY = 80; --Starting inventory and satchel size.  Ignores values < 30.  Do not set above 80!
 OPENING_CUTSCENE_ENABLE = 1; --Set to 1 to enable opening cutscenes, 0 to disable.
 SUBJOB_QUEST_LEVEL = 18; --Minimum level to accept either subjob quest.  Set to 0 to start the game with subjobs unlocked.
 ADVANCED_JOB_LEVEL = 30; --Minimum level to accept advanced job quests.  Set to 0 to start the game with advanced jobs.
@@ -47,7 +48,6 @@ BAS_FAME   = 5.000; --Multiplies fame earned from Bastok quests.
 WIN_FAME   = 5.000; --Multiplies fame earned from Windurst quests.
 NORG_FAME  = 5.000; --Multiplies fame earned from Norg and Tenshodo quests.
 JEUNO_FAME = 5.000; --Multiplies fame earned from Jeuno quests.
-
 FISHING_GUILD_POINTS      = 5.000; --Multiplies guild points earned from fishermans' guild trades.
 WOODWORKING_GUILD_POINTS  = 5.000; --Multiplies guild points earned from carpenters' guild trades.
 SMITHING_GUILD_POINTS     = 5.000; --Multiplies guild points earned from blacksmiths' guild trades.
